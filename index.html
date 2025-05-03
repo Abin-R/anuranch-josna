@@ -48,15 +48,8 @@
         <img src="image/favicon.png" alt="Flower" />
       </div>
     </div>
-    <!-- End Preloader-->
-    <!-- Begin Header -->
     <div class="header-wrapper" id="home">
-      <!-- Begin Hero -->
       <section class="hero is-large">
-        <!-- Begin Mobile Nav -->
-        <!-- < -->
-        <!-- End Mobile Nav -->
-        <!-- Begin Hero Content-->
         <div class="hero-body">
           <div class="container has-text-centered">
             <h1 class="subtitle">Wedding invitation</h1>
@@ -308,5 +301,25 @@
         duration: 800,
       });
     </script>
+    <script>
+      const hero = document.querySelector('.hero');
+    
+      const backgrounds = [
+        "linear-gradient(rgba(153, 110, 109, 0.65), rgba(153, 110, 109, 0.65)), url('image/IMG-20250503-WA0022.jpg')",
+        "linear-gradient(rgba(153, 110, 109, 0.65), rgba(153, 110, 109, 0.65)), url('image/IMG-20250503-WA0023.jpg')"
+      ];
+    
+      let index = 0;
+    
+      function changeBackground() {
+        hero.style.backgroundImage = backgrounds[index];
+        index = (index + 1) % backgrounds.length;
+      }
+    
+      // Initialize
+      changeBackground();
+      setInterval(changeBackground, 5000); // change every 5 seconds
+    </script>
+    
   </body>
 </html>
